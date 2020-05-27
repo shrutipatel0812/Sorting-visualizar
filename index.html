@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting visualizer</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+
+
+</head>
+<body>
+	<nav class="menu-activea">
+		<h1>SELECT</h1>
+		<ul>
+				
+				<li id="bubble">BUBBLE  SORT   </li>
+				<li id="selection">SELECTION  SORT</li>
+				<li id="insertion">INSERTION  SORT</li>
+				<!-- <li>QUICK  SORT    </li> -->
+					
+		</ul>
+	</nav>
+
+	<main>	
+		<section>	
+<!-- 			<br>	<br>	<br>	 -->
+			<!-- <h1>&larr; SORTING ALGO</h1> -->
+
+			<h1>Sorting visualizer</h1>
+		<ul class="nav justify-content-center">
+				<li class="nav-item">
+    				<button type="button" class=" mode btn selected ">SORT NAME</button>
+  				</li>
+  				<li class="nav-item">
+    				<button type="button" class="  btn  " id="try">SHUFFLE</button>
+  				</li>
+  				<li class="nav-item">
+    				<button type="button" class="  btn  "  id="sort" >SORT</button>
+  				</li>
+  				<li class="nav-item">
+    				<button type="button" class="  btn  " id="rev" >REVERSE</button>
+  				</li>
+  				<!-- <li class="nav-item">
+    				<button class="mode">SPEED</button>
+  				</li> -->
+  		<div class="dropdown">
+  <button class="btn  dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    	SPEED
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button" id="speed1">0.5x</button>
+    <button class="dropdown-item" type="button" id="speed2">Normal</button>
+    <button class="dropdown-item" type="button"id="speed3">1.5</button>
+  </div>
+</div>
+			</ul>
+
+
+
+
+
+			<div class="row">
+    			<div class="col-8" id="sh">
+    				<canvas id="myCanvas" width="800" height="400" style="border:1px solid #d3d3d3;" >&larr;
+					Your browser does not support the HTML5 canvas tag.
+					</canvas>
+    			</div>
+
+   				<div class="col-4" id="sw">
+  
+    					<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+  							<div class="card-header">ALGORITHM</div>
+  								<div class="card-body">
+    								<p id="para">
+    									Select one sorting algorithm .
+    									</p>
+    									<!-- <label>
+    									STEPS  :
+    									<input type="number" name="shruti" placeholder="steps..."disabled="disabled" id="step"></label>
+    									<label>
+    									PASSES :	
+    									<input type="text" name="shruti" placeholder="passes..."disabled="disabled"></label>
+    									<label> 
+    									TIME   :
+    									<input type="text" name="shruti" placeholder="time required..."disabled="disabled">
+    									</label> -->
+    								
+  								</div>
+							</div>
+    					</div>
+ 			</div>
+
+		</section>
+	</main>
+	
+<script type="text/javascript" src="sort_p.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script
+
+</body>
+</html>
