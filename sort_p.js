@@ -57,33 +57,16 @@ for( i=0;i<35;i++)
 x=30;
 
 
-
-
-function d(){
+function drwa1( color1 ,color2 ,color){
   ctx.clearRect(0, 0, 800, 500);
   for( i=0;i<35;i++){
   ctx.beginPath();
   ctx.rect(x, height[i], 20, 300-height[i]);
   ctx.fillRect(x, height[i], 20, 300-height[i]);
-  ctx.fillStyle = "steelblue";
-  ctx.fill();
-  ctx.stroke();
-  x=x+20;
-  }
-  x=30;
-}
-
-
-
-function drwa1( color1 ,color2){
-  ctx.clearRect(0, 0, 800, 500);
-  for( i=0;i<35;i++){
-  ctx.beginPath();
-  ctx.rect(x, height[i], 20, 300-height[i]);
-  ctx.fillRect(x, height[i], 20, 300-height[i]);
-  if(i==color1 || i== color2) ctx.fillStyle = "blue";
+  if((i==color1 || i== color2) && color== "b") ctx.fillStyle = "blue";
+  else if((i==color1 || i== color2) && color=="g") ctx.fillStyle = "green";
+  else if(color == "sb")ctx.fillStyle = "steelblue";
   else ctx.fillStyle = "red";
-  //ctx.fillStyle = "red";
   ctx.fill();
   ctx.stroke();
   x=x+20;
@@ -91,21 +74,7 @@ function drwa1( color1 ,color2){
   x=30;
 }
 
-function drwa2( color1 ,color2){
-  ctx.clearRect(0, 0, 800, 500);
-  for( i=0;i<35;i++){
-  ctx.beginPath();
-  ctx.rect(x, height[i], 20, 300-height[i]);
-  ctx.fillRect(x, height[i], 20, 300-height[i]);
-  if(i==color1 || i== color2) ctx.fillStyle = "green";
-  else ctx.fillStyle = "red";
-  //ctx.fillStyle = "red";
-  ctx.fill();
-  ctx.stroke();
-  x=x+20;
-  }
-  x=30;
-}
+
 
 $("#try").on('click',function(){
   exicution=true;
@@ -237,14 +206,14 @@ async function bubbleSort(){
         for ( var j = 0; j < len; j++) {
             
             if (height[j] < height[j + 1]) {
-                drwa1(j,j+1);
+                drwa1(j,j+1 ,"b");
                 var tmp = height[j];
                 height[j] = height[j + 1];
                 height[j + 1] = tmp;
                 steps++;
                   
                   await sleep(speed);
-                  drwa2(j,j+1);
+                  drwa1(j,j+1 ,"g");
                   await sleep(speed);
                   if(exicution==true){
                     return;
@@ -257,7 +226,7 @@ async function bubbleSort(){
         
     }
 
-    d();
+    drwa1(-1,-1,"sb");
 }
 
 
@@ -270,14 +239,14 @@ async function bubbleSortReverse(){
         for ( var j = 0; j < len; j++) {
             
             if (height[j] > height[j + 1]) {
-                drwa1(j,j+1);
+                drwa1(j,j+1 ,"b");
                 var tmp = height[j];
                 height[j] = height[j + 1];
                 height[j + 1] = tmp;
               
                   
                   await sleep(speed);
-                  drwa2(j,j+1);
+                  drwa1(j,j+1 ,"g");
                   await sleep(speed);
                    if(exicution==true){
                     return;
@@ -286,7 +255,7 @@ async function bubbleSortReverse(){
 
         }
     }
-    d();
+    drwa1(-1,-1,"sb");
 }
 
 $("#selection").on('click',function(){
@@ -337,17 +306,17 @@ async function selectionSort(){
                     return;
               }
         if (min !== i) {
-            drwa1(min , i);
+            drwa1(min , i ,"b");
             var tmp = height[i];
             height[i] = height[min];
             height[min] = tmp;
            
             await sleep(speed);
-            drwa2(min ,i);
+            drwa1(min ,i ,"g");
             await sleep(speed);
         }    
     }
-    d();
+    drwa1(-1,-1,"sb");
 }
 
 async function selectionSortReverse(){
@@ -367,18 +336,18 @@ async function selectionSortReverse(){
                     return;
               }
         if (min !== i) {
-            drwa1(min , i);
+            drwa1(min , i ,"b");
             var tmp = height[i];
             height[i] = height[min];
             height[min] = tmp;
            
             await sleep(speed);
-            drwa2(min ,i);
+            drwa1(min ,i ,"g");
             await sleep(speed);
             
         }    
     }
-    d();
+    drwa1(-1,-1,"sb");
 }
 
 
@@ -420,7 +389,7 @@ async function insertionSort()
    {
       var j = i - 1;
       var temp = height[i];
-      drwa1(i,-1);
+      drwa1(i,-1,"b");
         await sleep(speed);
       if(j >= 0 && height[j] < temp)
       {
@@ -433,7 +402,7 @@ async function insertionSort()
         height[j+1] = temp;
         
         
-         drwa2(j+1,-1);
+         drwa1(j+1,-1 ,"g");
          await sleep(speed);
 
       } 
@@ -441,7 +410,7 @@ async function insertionSort()
                     return;
              }
     }
-    d();
+    drwa1(-1,-1,"sb");
   
 }
 
@@ -452,7 +421,7 @@ async function insertionSortReverse()
    {
       var j = i - 1;
       var temp = height[i];
-      drwa1(i,-1);
+      drwa1(i,-1 ,"b");
         await sleep(speed);
       if(j >= 0 && height[j] > temp)
       {
@@ -464,7 +433,7 @@ async function insertionSortReverse()
         height[j+1] = temp;
         
         
-         drwa2(j,-1);
+         drwa1(j+1,-1 ,"g");
          await sleep(speed);
          
       } 
@@ -473,7 +442,7 @@ async function insertionSortReverse()
                     }
 
     }
-  d();
+  drwa1(-1,-1,"sb");
 }
 
 function sleep(ms) {
